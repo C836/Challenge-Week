@@ -1,7 +1,8 @@
-import * as S from "./Chart.styled";
 import { useEffect, useState } from "react";
-import { Ages } from "./../../types/Student";
+
+import * as S from "./Chart.styled";
 import { colors } from "../../global";
+import { Ages } from "./../../types/Student";
 
 type Props = {
   ageCount: Ages;

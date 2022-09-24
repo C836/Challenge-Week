@@ -1,7 +1,8 @@
-import * as S from "./Form.styled";
-import { Class } from "../../types/Student";
 import { FormEvent, useContext } from "react";
 import { StudentContext } from "../../contexts/StudentContext";
+
+import * as S from "./Form.styled";
+import { Class } from "../../types/Student";
 
 export function Form() {
   const { students, createStudent } = useContext(StudentContext);

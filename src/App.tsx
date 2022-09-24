@@ -1,11 +1,9 @@
-import { Form } from "./components/Form";
-import { Table } from "./components/Table";
-import { Chart } from "./components/Chart";
-import { Header } from "./layout/Header";
-import { Summary } from "./layout/Summary";
 import { useContext, useEffect, useState } from "react";
 import { StudentContext } from "./contexts/StudentContext";
+
 import * as S from "./App.styled";
+import { Chart, Form, Table } from "./components";
+import { Header, Summary } from "./layout";
 
 function App() {
   const { students } = useContext(StudentContext);

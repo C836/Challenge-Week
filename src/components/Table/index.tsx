@@ -1,6 +1,7 @@
-import * as S from "./Table.styled";
 import { useContext } from "react";
 import { StudentContext } from "../../contexts/StudentContext";
+
+import * as S from "./Table.styled";
 
 export function Table() {
   const { students } = useContext(StudentContext);
