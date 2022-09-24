@@ -1,3 +1,5 @@
+import { createGlobalStyle } from "styled-components";
+
 export const colors = {
   yellow: "#FFDD00",
   black: "#000000",
@@ -12,3 +14,13 @@ export const colors = {
     yellow: "#EFB119",
   },
 };
+
+export const GlobalStyle = createGlobalStyle`
+  .App {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-color: ${colors.yellow};
+  }
+`;
