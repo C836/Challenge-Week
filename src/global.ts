@@ -20,7 +20,15 @@ export const GlobalStyle = createGlobalStyle`
     position: absolute;
     width: 100%;
     height: 100%;
-
     background-color: ${colors.yellow};
+
+    main {
+      padding: 30px;
+      max-width: 100vw;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
