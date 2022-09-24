@@ -21,14 +21,5 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     min-height: 100%;
     background-color: ${colors.yellow};
-
-    main {
-      padding: 30px;
-      max-width: 100vw;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
   }
 `;

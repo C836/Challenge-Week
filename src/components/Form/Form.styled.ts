@@ -5,9 +5,8 @@ export const Form = styled.form`
   background-color: ${colors.black};
   padding: 35px;
   border-radius: 20px;
-  width: 95%;
-  max-width: 980px;
-
+  width: 980px;
+  max-width: 90%;
   display: flex;
   column-gap: 30px;
 `;
