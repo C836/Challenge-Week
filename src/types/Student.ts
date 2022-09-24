@@ -27,3 +27,21 @@ export enum Class {
   "T19",
   "T20",
 }
+
+export type Ages = {
+  "18-21": {
+    count: number;
+  };
+  "22-25": {
+    count: number;
+  };
+  "26-29": {
+    count: number;
+  };
+  "30-33": {
+    count: number;
+  };
+  over33: {
+    count: number;
+  };
+};
