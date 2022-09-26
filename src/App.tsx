@@ -53,7 +53,7 @@ function App() {
     setAgeCount(newAgeCount);
   }, [students]);
 
-  useEffect(() => {
+  useEffect(() => {  
     syncApi();
   }, []);
 
