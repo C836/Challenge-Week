@@ -11,8 +11,8 @@ export const StudentsSchema = new Schema<Student>(
       type: String,
       required: true
     },
-    classes: {
-      type: [String],
+    group: {
+      type: String,
       enum: Class,
       required: true
     },

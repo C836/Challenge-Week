@@ -3,7 +3,7 @@ import { Document } from "mongoose";
 export class Student extends Document {
   _id: number;
   name: string;
-  classes: keyof Class[];
+  group: keyof Class;
   age: number;
 }
 
