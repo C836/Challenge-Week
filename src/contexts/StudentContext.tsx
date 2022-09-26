@@ -10,6 +10,7 @@ type StudentContextProps = {
 type StudentContextType = {
   students: Student[];
   createStudent: (data: Student) => void;
+  deleteStudent: (id: number) => Promise<void>;
   setStudents: (newState: Student[]) => void;
   syncApi: () => Promise<void>;
 };
@@ -25,6 +26,11 @@ export const StudentContextProvider = ({ children }: StudentContextProps) => {
 
     studentsService.postStudent(data);
     setStudents([...students, data]);
+  };
+
+  const deleteStudent = async (id: number) => {
+    studentsService.deleteStudent(id)
+    setStudents(students.filter(student => student._id !== id));
   };
 
   const syncApi = async () => {
@@ -43,6 +49,7 @@ export const StudentContextProvider = ({ children }: StudentContextProps) => {
         students,
         setStudents,
         createStudent,
+        deleteStudent,
         syncApi,
       }}
     >

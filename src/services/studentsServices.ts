@@ -30,7 +30,7 @@ export const postStudent = async (body: Student) => {
 
 export const deleteStudent = async (id: number) => {
   try {
-    const result = await Api.delete(`/students/` + id);
+    const result = await Api.delete(`/students/delete/` + id);
     return result;
   } catch (err) {
     throw err;

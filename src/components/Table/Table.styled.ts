@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const Delete = styled.span`
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  :hover {
+    color: red;
+  }
+`;
+
 export const Table = styled.table`
   background-color: white;
   border: 1px solid;
@@ -7,7 +20,8 @@ export const Table = styled.table`
   font-family: "Archivo";
   margin-right: 60px;
 
-  th, td {
+  th,
+  td {
     border: 1px solid;
     padding: 20px;
     max-width: 240px;
@@ -15,5 +29,14 @@ export const Table = styled.table`
 
   td {
     word-break: break-all;
+  }
+
+  tr:hover ${Delete} {
+    display: block;
+  }
+
+  td:nth-of-type(1) {
+    position: relative;
+    padding-right: 45px;
   }
 `;
