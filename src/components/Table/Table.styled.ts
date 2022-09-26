@@ -26,7 +26,7 @@ export const Table = styled.table`
     padding: 20px;
     max-width: 240px;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1050px) {
       padding: 16px;
     }
   }
@@ -43,12 +43,12 @@ export const Table = styled.table`
     position: relative;
     padding-right: 45px;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1050px) {
       padding-right: 16px;
     }
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1050px) {
     width: 100%;
     margin: 0;
   }

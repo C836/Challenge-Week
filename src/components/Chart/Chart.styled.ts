@@ -9,7 +9,7 @@ export const Chart = styled.div`
   align-items: center;
   width: 50%;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1050px) {
     justify-content: space-evenly;
     width: 100%;
   }
@@ -40,7 +40,7 @@ export const Wheel = styled.div<{ chartValues: number[][] }>`
     min-height: ${diameter / 3}px;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1050px) {
     min-width: ${diameter / 1.1}px;
     min-height: ${diameter / 1.1}px;
 

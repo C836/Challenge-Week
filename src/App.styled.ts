@@ -18,7 +18,7 @@ export const Data = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 820px) {
+  @media (max-width: 1050px) {
     flex-direction: column;
     padding: 0;
     row-gap: 50px;
