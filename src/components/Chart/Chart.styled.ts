@@ -5,7 +5,14 @@ const diameter = 230;
 
 export const Chart = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 50%;
+
+  @media (max-width: 820px) {
+    justify-content: space-evenly;
+    width: 100%;
+  }
 `;
 
 export const Wheel = styled.div<{ chartValues: number[][] }>`
@@ -20,7 +27,6 @@ export const Wheel = styled.div<{ chartValues: number[][] }>`
   border-radius: 50%;
   min-width: ${diameter}px;
   min-height: ${diameter}px;
-  margin-right: 42px;
 
   display: flex;
   align-items: center;
@@ -32,6 +38,17 @@ export const Wheel = styled.div<{ chartValues: number[][] }>`
     border-radius: 50%;
     min-width: ${diameter / 3}px;
     min-height: ${diameter / 3}px;
+  }
+
+  @media (max-width: 820px) {
+    min-width: ${diameter / 1.1}px;
+    min-height: ${diameter / 1.1}px;
+
+    ::after {
+      content: "";
+      min-width: ${(diameter / 3) / 1.1}px;
+      min-height: ${(diameter / 3) / 1.1}px;
+    }
   }
 `;
 

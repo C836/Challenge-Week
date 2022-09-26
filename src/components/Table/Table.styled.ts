@@ -25,6 +25,10 @@ export const Table = styled.table`
     border: 1px solid;
     padding: 20px;
     max-width: 240px;
+
+    @media (max-width: 820px) {
+      padding: 16px;
+    }
   }
 
   td {
@@ -38,5 +42,14 @@ export const Table = styled.table`
   td:nth-of-type(1) {
     position: relative;
     padding-right: 45px;
+
+    @media (max-width: 820px) {
+      padding-right: 16px;
+    }
+  }
+
+  @media (max-width: 820px) {
+    width: 100%;
+    margin: 0;
   }
 `;
