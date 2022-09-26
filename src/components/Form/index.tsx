@@ -17,12 +17,12 @@ export function Form() {
     event.preventDefault();
     const target = event.currentTarget;
 
-    const { studentName, currentClass, age } = target;
+    const { studentName, group, age } = target;
 
     createStudent({
-      id: students.length + 1,
+      _id: students.length + 1,
       name: studentName.value,
-      class: currentClass.value,
+      group: group.value,
       age: age.value,
     });
   };
@@ -36,7 +36,7 @@ export function Form() {
         size={24}
       />
 
-      <S.Input as={"select"} name={"currentClass"}>
+      <S.Input as={"select"} name={"group"}>
         <option selected disabled={true}>
           Turma
         </option>

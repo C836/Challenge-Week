@@ -6,7 +6,7 @@ import { Chart, Form, Table } from "./components";
 import { Header, Summary } from "./layout";
 
 function App() {
-  const { students } = useContext(StudentContext);
+  const { students, syncApi } = useContext(StudentContext);
 
   const [ageCount, setAgeCount] = useState({
     "18-21": { count: 0 },
@@ -48,6 +48,10 @@ function App() {
 
     setAgeCount(newAgeCount);
   }, [students]);
+
+  useEffect(() => {
+    syncApi();
+  }, []);
 
   return (
     <div className="App">

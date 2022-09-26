@@ -20,9 +20,9 @@ export function Table() {
         {students.map((item, index) => {
           return (
             <tr key={index}>
-              <th scope="row">{item.id}</th>
+              <th scope="row">{item._id}</th>
               <td>{item.name}</td>
-              <td>{item.class}</td>
+              <td>{item.group}</td>
               <td>{item.age}</td>
             </tr>
           );
