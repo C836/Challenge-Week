@@ -1,11 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { StudentContext } from "./contexts/StudentContext";
 
 import * as S from "./App.styled";
 import { Chart, Form, Table } from "./components";
 import { Header, Summary } from "./layout";
+import { Placeholder } from "./components/Placeholder";
+import { Loading } from "./layout/Loading";
 
 function App() {
+  const loadedRef = useRef(false);
   const { students, syncApi } = useContext(StudentContext);
 
   const [ageCount, setAgeCount] = useState({
@@ -46,6 +49,7 @@ function App() {
       }
     }
 
+    loadedRef.current = true;
     setAgeCount(newAgeCount);
   }, [students]);
 
@@ -57,12 +61,22 @@ function App() {
     <div className="App">
       <Header />
       <S.Main>
-        <Form />
-        <Summary />
-        <S.Data>
-          <Table />
-          <Chart ageCount={ageCount} ranges={Object.keys(ranges)} />
-        </S.Data>
+        <Form disabled={!loadedRef.current} />
+        {loadedRef.current ? (
+          students.length ? (
+            <>
+              <Summary />
+              <S.Data>
+                <Table />
+                <Chart ageCount={ageCount} ranges={Object.keys(ranges)} />
+              </S.Data>
+            </>
+          ) : (
+            <Placeholder />
+          )
+        ) : (
+          <Loading />
+        )}
       </S.Main>
     </div>
   );

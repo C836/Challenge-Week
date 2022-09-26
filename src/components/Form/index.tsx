@@ -4,7 +4,11 @@ import { StudentContext } from "../../contexts/StudentContext";
 import * as S from "./Form.styled";
 import { Class } from "../../types/Student";
 
-export function Form() {
+type Props = {
+  disabled: boolean;
+};
+
+export function Form({ disabled }: Props) {
   const { students, createStudent } = useContext(StudentContext);
 
   const classes = Object.values(Class)
@@ -30,13 +34,18 @@ export function Form() {
   return (
     <S.Form onSubmit={onSubmit}>
       <S.Input
+        disabled={disabled}
         type={"text"}
         name={"studentName"}
         placeholder="Nome do Estudante"
         size={24}
       />
 
-      <S.Input as={"select"} name={"group"}>
+      <S.Input
+        disabled={disabled}
+        as={"select"} 
+        name={"group"}
+      >
         <option selected disabled={true}>
           Turma
         </option>
@@ -48,6 +57,7 @@ export function Form() {
       </S.Input>
 
       <S.Input
+        disabled={disabled}
         type={"number"}
         name={"age"}
         placeholder="Idade"
@@ -56,7 +66,7 @@ export function Form() {
       />
 
       <S.Right>
-        <button>ENVIAR</button>
+        <button disabled={disabled}>ENVIAR</button>
       </S.Right>
     </S.Form>
   );
