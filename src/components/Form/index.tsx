@@ -35,6 +35,7 @@ export function Form({ disabled }: Props) {
     <S.Form onSubmit={onSubmit}>
       <S.Input
         disabled={disabled}
+        required={true}
         type={"text"}
         name={"studentName"}
         placeholder="Nome do Estudante"
@@ -43,10 +44,11 @@ export function Form({ disabled }: Props) {
 
       <S.Input
         disabled={disabled}
+        required={true}
         as={"select"} 
         name={"group"}
       >
-        <option selected disabled={true}>
+        <option value="" hidden selected disabled={true}>
           Turma
         </option>
         {classes.map((item, index) => (
@@ -57,6 +59,7 @@ export function Form({ disabled }: Props) {
       </S.Input>
 
       <S.Input
+        required={true}
         disabled={disabled}
         type={"number"}
         name={"age"}
