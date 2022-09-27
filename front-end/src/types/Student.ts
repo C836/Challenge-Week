@@ -1,7 +1,7 @@
 export type Student = {
-  _id: number;
+  id: number;
   name: string;
-  group: keyof Class;
+  class: keyof Class;
   age: number;
 };
 

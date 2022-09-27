@@ -11,16 +11,10 @@ export const Main = styled.div`
 
 export const Data = styled.div`
   width: 1050px;
-  max-width: calc(90% + 48px);
+  max-width: 90%;
   margin-top: 38px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 1050px) {
-    flex-direction: column;
-    padding: 0;
-    row-gap: 50px;
-  }
 `;
