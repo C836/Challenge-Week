@@ -39,7 +39,9 @@ $ git clone https://github.com/C836/Challenge-Week.git
 $ cd Challenge-Week
 ```
 
-3. O projeto armazena as cartas e resultados por meio do [MongoDB](https://www.mongodb.com/cloud). Edite o arquivo [.env](https://github.com/C836/Challenge-Week/blob/main/.env_example) na raiz da aplicação, de acordo com seu usuário e senha. Ao iniciar a aplicação, a conexão será feita automaticamente.
+3. O projeto armazena as cartas e resultados por meio do [MongoDB](https://www.mongodb.com/cloud). Edite o arquivo [.env](https://github.com/C836/Challenge-Week/blob/main/.env_example) na raiz da aplicação de acordo com seu usuário e senha.
+
+⚠️ O arquivo é único para ambos os repositórios!⚠️
 
 ```bash
 # URL de conexão:
@@ -73,4 +75,4 @@ $ npm start
 
 <b>Copyright (c) 2022 Gabriel Lopes</b>
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/C836/Pokemon-Cards/blob/main/LICENSE) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/C836/Challenge-Week/blob/main/LICENSE) para mais detalhes.
