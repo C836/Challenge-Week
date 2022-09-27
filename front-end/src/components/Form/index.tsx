@@ -4,7 +4,11 @@ import { StudentContext } from "../../contexts/StudentContext";
 import * as S from "./Form.styled";
 import { Class } from "../../types/Student";
 
-export function Form() {
+type Props = {
+  disabled: boolean;
+};
+
+export function Form({ disabled }: Props) {
   const { students, createStudent } = useContext(StudentContext);
 
   const classes = Object.values(Class)
@@ -17,12 +21,12 @@ export function Form() {
     event.preventDefault();
     const target = event.currentTarget;
 
-    const { studentName, currentClass, age } = target;
+    const { studentName, group, age } = target;
 
     createStudent({
-      id: students.length + 1,
+      _id: students.length + 1,
       name: studentName.value,
-      class: currentClass.value,
+      group: group.value,
       age: age.value,
     });
   };
@@ -30,14 +34,21 @@ export function Form() {
   return (
     <S.Form onSubmit={onSubmit}>
       <S.Input
+        disabled={disabled}
+        required={true}
         type={"text"}
         name={"studentName"}
         placeholder="Nome do Estudante"
         size={24}
       />
 
-      <S.Input as={"select"} name={"currentClass"}>
-        <option selected disabled={true}>
+      <S.Input
+        disabled={disabled}
+        required={true}
+        as={"select"} 
+        name={"group"}
+      >
+        <option value="" hidden selected disabled={true}>
           Turma
         </option>
         {classes.map((item, index) => (
@@ -48,6 +59,8 @@ export function Form() {
       </S.Input>
 
       <S.Input
+        required={true}
+        disabled={disabled}
         type={"number"}
         name={"age"}
         placeholder="Idade"
@@ -56,7 +69,7 @@ export function Form() {
       />
 
       <S.Right>
-        <button>ENVIAR</button>
+        <button disabled={disabled}>ENVIAR</button>
       </S.Right>
     </S.Form>
   );

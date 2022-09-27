@@ -4,7 +4,7 @@ import { StudentContext } from "../../contexts/StudentContext";
 import * as S from "./Table.styled";
 
 export function Table() {
-  const { students } = useContext(StudentContext);
+  const { students, deleteStudent } = useContext(StudentContext);
 
   return (
     <S.Table>
@@ -20,9 +20,11 @@ export function Table() {
         {students.map((item, index) => {
           return (
             <tr key={index}>
-              <th scope="row">{item.id}</th>
-              <td>{item.name}</td>
-              <td>{item.class}</td>
+              <th scope="row">{item._id}</th>
+              <td>{item.name}
+                <S.Delete onClick={() => deleteStudent(item._id)}>X</S.Delete>
+              </td>
+              <td>{item.group}</td>
               <td>{item.age}</td>
             </tr>
           );

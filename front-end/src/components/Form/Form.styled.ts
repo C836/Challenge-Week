@@ -9,6 +9,11 @@ export const Form = styled.form`
   max-width: 90%;
   display: flex;
   column-gap: 30px;
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    padding: 24px;
+  }
 `;
 
 export const Input = styled.input`
@@ -28,12 +33,13 @@ export const Input = styled.input`
   [type="number"] {
     width: 10px;
   }
+
+  @media (max-width: 820px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const Right = styled.div`
-  margin-right: 0;
-  margin-left: auto;
-
   button {
     background-color: ${colors.yellow};
     padding: 10px 32px;
@@ -43,5 +49,14 @@ export const Right = styled.div`
     font-family: "Archivo";
     font-weight: 700;
     font-size: 1rem;
+
+    @media (max-width: 820px) {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 821px) {
+    margin-right: 0;
+    margin-left: auto;
   }
 `;
